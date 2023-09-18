@@ -28,3 +28,11 @@ Had to check the OS version used in GitPod to install Terraform via
 
 #### GitPod Init
 [GitPod Link](https://www.gitpod.io/docs/configure/workspaces/tasks) for understanding how .gitpod.yml should function properly
+
+### Working with Env Vars
+We can list out all environmental variables using the `env` command and use `grep` to understand.
+- We can set set a variable using `export PROJECT_ROOT='/workspace/terraform-beginner-bootcamp-2023`
+- We and remove that variable using `unset PROJECT_ROOT` to remove the variable
+
+#### Env Var Persistence
+- Use `gp env PROJECT_ROOT='/workspace/terraform-beginner-bootcamp-2023'` to set a variable as persistent using gitpod
