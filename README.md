@@ -46,3 +46,23 @@ We can check if your AWS creds are configured correctly using the following comm
 ```sh
 aws sts get-caller-identity
 ```
+
+## Terraform Basics
+
+### Terraform Registry
+Terraform sources their providers and modules from the TF registry located [here](https://registry.terraform.io/)
+
+- **Providers** is an interface to APIs to create resources
+- **Modules** are a way to make large amounts of TF code modular and portable 
+
+### Terraform Init
+Initializes a directory and pulls down the provider binary
+
+### Terraform Output
+Can use `terraform output` to see what resources can be output
+
+### Terraform Apply
+Run `terraform apply --auto-approve` to automatically apply without a prompt
+
+### Terraform State File
+`.terraform.tfstate` contains the current state of the infrastructure. **Don't commit**
