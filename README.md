@@ -36,3 +36,13 @@ We can list out all environmental variables using the `env` command and use `gre
 
 #### Env Var Persistence
 - Use `gp env PROJECT_ROOT='/workspace/terraform-beginner-bootcamp-2023'` to set a variable as persistent using gitpod
+
+### AWS CLI Installation
+- [Documentation on setting env vars](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html)
+
+AWS CLI is installed for the project via the bash script `bin/install_aws_cli`
+
+We can check if your AWS creds are configured correctly using the following command:
+```sh
+aws sts get-caller-identity
+```
