@@ -64,5 +64,8 @@ Can use `terraform output` to see what resources can be output
 ### Terraform Apply
 Run `terraform apply --auto-approve` to automatically apply without a prompt
 
+### Terraform Destroy
+This will destroy resources, needs approval and can be auto-approved via `terraform destory --auto-approve`
+
 ### Terraform State File
 `.terraform.tfstate` contains the current state of the infrastructure. **Don't commit**
