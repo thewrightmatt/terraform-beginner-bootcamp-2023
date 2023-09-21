@@ -1,4 +1,11 @@
 terraform {
+  cloud {
+    organization = "tf_bootcamp_twm"
+    workspaces {
+      name = "terra-house-1"
+    }
+  }
+
   required_providers {
     random = {
       source  = "hashicorp/random"
@@ -14,6 +21,10 @@ terraform {
 
 provider "random" {
   # Configuration options
+}
+
+provider "aws" {
+  region = "us-east-1"
 }
 
 resource "random_string" "bucket_name" {
