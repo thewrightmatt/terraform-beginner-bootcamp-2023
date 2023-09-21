@@ -69,3 +69,6 @@ This will destroy resources, needs approval and can be auto-approved via `terraf
 
 ### Terraform State File
 `.terraform.tfstate` contains the current state of the infrastructure. **Don't commit**
+
+## Terraform State Migration
+Migrated the state to TF cloud using `terraform login` and then following the prompts. Required manual click on the link to generate a token and then paste it.
