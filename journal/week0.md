@@ -7,9 +7,9 @@
   + [Considerations with the Terraform CLI changes](#considerations-with-the-terraform-cli-changes)
   + [Refactored into Bash Script](#refactored-into-bash-script)
   + [Considerations for Linux Distribution](#considerations-for-linux-distribution)
-    - [GitPod Init](#gitpod-init)
-  + [Working with Env Vars](#working-with-env-vars)
-    - [Env Var Persistence](#env-var-persistence)
+* [GitPod Init](#gitpod-init)
+* [Working with Env Vars](#working-with-env-vars)
+  + [Env Var Persistence](#env-var-persistence)
 * [AWS CLI Installation](#aws-cli-installation)
 * [Terraform Basics](#terraform-basics)
   + [Terraform Registry](#terraform-registry)
@@ -51,10 +51,12 @@ Recreated the Terraform CLI installation script with a shell script in /bin/ and
 Had to check the OS version used in GitPod to install Terraform via 
 ```/etc/os-release/```
 
-#### GitPod Init
+
+
+## GitPod Lifecycle
 [GitPod Link](https://www.gitpod.io/docs/configure/workspaces/tasks) for understanding how .gitpod.yml should function properly
 
-### Working with Env Vars
+## Working with Env Vars
 We can list out all environmental variables using the `env` command and use `grep` to understand.
 - We can set set a variable using `export PROJECT_ROOT='/workspace/terraform-beginner-bootcamp-2023`
 - We and remove that variable using `unset PROJECT_ROOT` to remove the variable
