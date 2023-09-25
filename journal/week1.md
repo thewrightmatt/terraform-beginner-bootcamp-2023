@@ -60,3 +60,16 @@ Files ending in auto.tfvars will automatically get loaded during the plan proces
 - Command-Line Flags (-var, -var-file)
 - Workspace Variables (Terraform Workspaces)
 - Variable Defaults in Modules
+
+## Dealing with Configuration Drift
+
+### Missing Statefile?
+If the statefile is lost, you'll need to destory your cloud infra manually. 
+
+### Fixing Missing Resources with TF Import
+`terraform import aws_s3_bucket.website_bucket $S3bucketname`
+
+[Official TF documentation on TF Import](https://developer.hashicorp.com/terraform/cli/import)
+
+### Fix Manual Configuration
+If someone deletes or modifies resources in the cloud via 'clickops', we can run `terraform plan` to see what is out of alignment or has 'drifted' from the desired configuration. Subsequently, running a `terraform apply` will then change or potentially redeploy the resource.
