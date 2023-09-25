@@ -48,4 +48,4 @@ We can use the `-var` flag to set an input varaible or override an existing vari
 Default file to load terraform variables
 
 ##### auto.tfvars
-- TODO: Files ending in auto.tfvars will automatically get loaded during the plan process
+Files ending in auto.tfvars will automatically get loaded during the plan process
