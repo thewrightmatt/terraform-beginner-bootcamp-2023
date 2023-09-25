@@ -1,10 +1,10 @@
 terraform {
-  cloud {
-    organization = "tf_bootcamp_twm"
-    workspaces {
-      name = "terra-house-1"
-    }
-  }
+  # cloud {
+  #   organization = "tf_bootcamp_twm"
+  #   workspaces {
+  #     name = "terra-house-1"
+  #   }
+  # }
 
   required_providers {
     random = {
