@@ -73,3 +73,24 @@ If the statefile is lost, you'll need to destory your cloud infra manually.
 
 ### Fix Manual Configuration
 If someone deletes or modifies resources in the cloud via 'clickops', we can run `terraform plan` to see what is out of alignment or has 'drifted' from the desired configuration. Subsequently, running a `terraform apply` will then change or potentially redeploy the resource.
+
+## Terraform Modules
+
+### Terraform Module Structure
+A module should at least contain `modules` directory when locally developing modules.
+
+### Passing Input Variables
+We can pass input varaibles to our module. The module needs to declare the varaibles in it's own variables.tf
+```tf
+module "terrahouse_aws" {
+  source = "./modules/terrahouse_aws"
+  user_uuid = var.user_uuid
+  bucket_name = var.bucket_name
+}
+```
+
+### Module Sources
+We can source/import modules from different locations:
+- locally
+- Github
+- TF registry
