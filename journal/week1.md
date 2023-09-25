@@ -49,3 +49,14 @@ Default file to load terraform variables
 
 ##### auto.tfvars
 Files ending in auto.tfvars will automatically get loaded during the plan process
+
+##### Order of Terraform Variables
+- Explicit Input Values
+- Environment Variables (TF_VAR_*)
+- Variable Files (terraform.tfvars, .auto.tfvars)
+- Default Values
+- Data Sources and Outputs
+- Providers and Provider Configuration
+- Command-Line Flags (-var, -var-file)
+- Workspace Variables (Terraform Workspaces)
+- Variable Defaults in Modules
