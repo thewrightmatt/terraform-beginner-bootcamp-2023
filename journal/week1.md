@@ -39,12 +39,13 @@ We can use the `-var` flag to set an input varaible or override an existing vari
 [Terraform Input Varaibles](https://developer.hashicorp.com/terraform/language/values/variables)
 
 ##### var-file flag
-- TODO: Apparently im supposed to research some shit. Document this flag
+- `-var 'NAME=VALUE'` - Will set a value for a single input variable declared in the root module of the configuration. Use this option multiple times to set more than one variable. Refer to Input Variables on the Command Line for more information.
+
+
+- `-var-file=FILENAME` - This set values for potentially many input variables declared in the root module of the configuration, using definitions from a "tfvars" file. Use this option multiple times to include values from more than one file.
 
 ##### terraform.tfvars
 Default file to load terraform variables
 
 ##### auto.tfvars
-- TODO: Document this functionality in TF Cloud
-
-### Gitpod
+- TODO: Files ending in auto.tfvars will automatically get loaded during the plan process
