@@ -145,6 +145,11 @@ resource "aws_s3_object" "index_html" {
 }
 ```
 
+## Terraform Data
+Different than sources, `terraform_data` allows for resource lifecycle. You can use the `terraform_data` resource without requiring or configuring a provider. Source and examples below
+
+- [Source](https://developer.hashicorp.com/terraform/language/resources/terraform-data)
+
 ## Terraform Data Sources
 This allows us to source data from cloud resources. It's useful to reference cloud resources without importing them
 - [TF Data Sources](https://developer.hashicorp.com/terraform/language/data-sources)
@@ -154,3 +159,7 @@ output "account_id" {
   value = data.aws_caller_identity.current.account_id
 }
 ```
+
+### Changing the lifecycle of resources
+- [Source](https://developer.hashicorp.com/terraform/language/meta-arguments/lifecycle)
+- Lifecycle is a nested block that can appear within a resource block. The lifecycle block and its contents are meta-arguments, available for all resource blocks regardless of type.
