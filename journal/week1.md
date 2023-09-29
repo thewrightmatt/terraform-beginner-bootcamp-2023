@@ -94,3 +94,15 @@ We can source/import modules from different locations:
 - locally
 - Github
 - TF registry
+
+## ChatGPT
+The training data the LLMs such as ChatGPT use may not be the latest; such an example would be ChatGPT not providing any new data beyond 2021 in regards to Terraform.
+
+## Working with files in Terraform
+
+### Path Variable
+There is a special varaible called `path` in Terraform that allows one to reference local paths:
+- path.module = Filesystem path of the module where the expression is placed.
+- path.root = The filesystem path of the root module of the configuration.
+- path.cwd = This path is an absolute path that includes details about the filesystem structure. 
+- [Special Path Variable](https://developer.hashicorp.com/terraform/language/expressions/references#filesystem-and-workspace-info)
