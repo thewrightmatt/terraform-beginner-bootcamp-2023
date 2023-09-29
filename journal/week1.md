@@ -2,6 +2,18 @@
 
 ## Table of Contents
 
+## Git Tags
+- [How To Delete Local and Remote Tags on Git](https://devconnected.com/how-to-delete-local-and-remote-tags-on-git/)
+
+**Locally Delete Tag**
+
+`git tag -d <tag_name>`
+
+
+**Delete Remote Tag**
+
+`git push --delete origin tagname`
+
 
 ## Root Module Structure
 
