@@ -122,6 +122,10 @@ condition = fileexists(var.index_html_filepath)
 - [Source](https://developer.hashicorp.com/terraform/language/functions/filemd5)
 - Used to get the checksum of a file, used in the S3 document upload to check for file changes.
 
+### JSONEncode
+- [Source](https://developer.hashicorp.com/terraform/language/functions/jsonencode)
+- `jsonencode` encodes a given value to a string using JSON syntax. Good for inline policies
+
 ### Path Variable
 There is a special varaible called `path` in Terraform that allows one to reference local paths:
 - path.module = Filesystem path of the module where the expression is placed.
@@ -138,5 +142,15 @@ resource "aws_s3_object" "index_html" {
   source = var.index_html_filepath
 
   etag = filemd5(var.index_html_filepath)
+}
+```
+
+## Terraform Data Sources
+This allows us to source data from cloud resources. It's useful to reference cloud resources without importing them
+- [TF Data Sources](https://developer.hashicorp.com/terraform/language/data-sources)
+
+```tf
+output "account_id" {
+  value = data.aws_caller_identity.current.account_id
 }
 ```
