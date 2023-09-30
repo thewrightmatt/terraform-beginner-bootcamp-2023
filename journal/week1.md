@@ -112,6 +112,10 @@ The training data the LLMs such as ChatGPT use may not be the latest; such an ex
 
 ## Working with files in Terraform
 
+### Heredoc
+- Terraform also supports a "heredoc" style of string literal inspired by Unix shell languages, which allows multi-line strings to be expressed more clearly.
+- [Source](https://developer.hashicorp.com/terraform/language/expressions/strings#indented-heredocs)
+
 ### Filexists Function
 This is a built in terraform function to check the existance of a file
 ```tf
@@ -145,12 +149,12 @@ resource "aws_s3_object" "index_html" {
 }
 ```
 
-## Terraform Data
+### Terraform Data
 Different than sources, `terraform_data` allows for resource lifecycle. You can use the `terraform_data` resource without requiring or configuring a provider. Source and examples below
 
 - [Source](https://developer.hashicorp.com/terraform/language/resources/terraform-data)
 
-## Terraform Data Sources
+### Terraform Data Sources
 This allows us to source data from cloud resources. It's useful to reference cloud resources without importing them
 - [TF Data Sources](https://developer.hashicorp.com/terraform/language/data-sources)
 
@@ -163,3 +167,32 @@ output "account_id" {
 ### Changing the lifecycle of resources
 - [Source](https://developer.hashicorp.com/terraform/language/meta-arguments/lifecycle)
 - Lifecycle is a nested block that can appear within a resource block. The lifecycle block and its contents are meta-arguments, available for all resource blocks regardless of type.
+
+## Provisioners
+- Provisioners allow you to execute commands on compute resources for actions that aren't natively supported via Terraform (aka configuration)
+  - Not recommended by Hashicorp due to it being configuration rather than infrastructure provisioning.
+
+### Local-exec
+- A command will be executeded on the machine running the terraform commands, eg. plan/apply
+
+```tf
+resource "aws_instance" "web" {
+  # ...
+
+  provisioner "local-exec" {
+    command = "echo ${self.private_ip} >> private_ips.txt"
+  }
+}
+```
+
+### Remote-exec
+This will run commands on a remote machine (not jthe one running Terraform). Creds for either SSH or other will need to be provided.
+
+```tf
+provisioner "remote-exec" {
+  inline = [
+    "puppet apply",
+    "consul join ${aws_instance.web.private_ip}",
+  ]
+}
+```
