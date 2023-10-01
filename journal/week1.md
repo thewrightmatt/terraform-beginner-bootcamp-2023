@@ -196,3 +196,10 @@ provisioner "remote-exec" {
   ]
 }
 ```
+
+## For Each Expresisons
+- For each allows enumeration over complex data types. It is useful for multiples of a cloud resource and for implementing DRY.
+```sh
+[for s in var.list : upper(s)]
+```
+- [For Each Expression](https://developer.hashicorp.com/terraform/language/expressions/for)
