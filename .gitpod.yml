@@ -14,7 +14,7 @@ tasks:
   - name: http-server
     before: |
       npm install --global http-server
-    commandd:
+    command:
       http-server
 vscode:
   extensions:
