@@ -1,6 +1,43 @@
 # Terraform Beginner Bootcamp 2023 - Week 1
 
 ## Table of Contents
+- [Git Tags](#git-tags)
+- [Root Module Structure](#root-module-structure)
+- [Environment Variables](#environment-variables)
+  * [Terraform Cloud](#terraform-cloud)
+  * [Terraform Input Vars](#terraform-input-vars)
+    + [Loading Terraform Values](#loading-terraform-values)
+      - [var-file flag](#var-file-flag)
+      - [terraform.tfvars](#terraformtfvars)
+      - [auto.tfvars](#autotfvars)
+      - [Order of Terraform Variables](#order-of-terraform-variables)
+- [Dealing with Configuration Drift](#dealing-with-configuration-drift)
+  * [Missing Statefile?](#missing-statefile-)
+  * [Fixing Missing Resources with TF Import](#fixing-missing-resources-with-tf-import)
+  * [Fix Manual Configuration](#fix-manual-configuration)
+- [Terraform Modules](#terraform-modules)
+  * [Terraform Module Structure](#terraform-module-structure)
+  * [Passing Input Variables](#passing-input-variables)
+  * [Module Sources](#module-sources)
+- [ChatGPT](#chatgpt)
+- [Working with files in Terraform](#working-with-files-in-terraform)
+  * [Heredoc](#heredoc)
+  * [Filexists Function](#filexists-function)
+  * [Filemd5](#filemd5)
+  * [JSONEncode](#jsonencode)
+  * [Path Variable](#path-variable)
+    + [Path Var Example](#path-var-example)
+  * [Terraform Data](#terraform-data)
+  * [Terraform Data Sources](#terraform-data-sources)
+  * [Changing the lifecycle of resources](#changing-the-lifecycle-of-resources)
+- [Provisioners](#provisioners)
+  * [Local-exec](#local-exec)
+  * [Remote-exec](#remote-exec)
+- [For Each Expresisons](#for-each-expresisons)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
+
 
 ## Git Tags
 - [How To Delete Local and Remote Tags on Git](https://devconnected.com/how-to-delete-local-and-remote-tags-on-git/)
